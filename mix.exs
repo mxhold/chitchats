@@ -15,7 +15,7 @@ defmodule Chitchats.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     [applications: [:logger],
-     mod: {Chitchats, []}]
+     mod: {Chitchats, [port: 4574]}]
   end
 
   # Dependencies can be Hex packages:
