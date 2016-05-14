@@ -23,7 +23,7 @@ defmodule Chitchats.ClientHandler do
     after 0 -> nil
     end
 
-    case :gen_tcp.recv(socket, 0) do
+    case :gen_tcp.recv(socket, 0, 10) do
       {:ok, message} -> Chitchats.Server.say(Chitchats.ChatServer, message)
       {:error, :timeout} -> nil
       {:error, :closed} ->
